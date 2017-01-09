@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<?php
-  session_start();
-
-  $username = "john"
-  $password = "password"
-
-  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    header("Location: success.php");
-  }
-
-  if (isset($_POST['username']) && isset($_POST['password'])) {
-    if ($_POST['username'] == $username && $_POST['password'] == $password)
-    {
-      $_SESSION['loggedin'] = true;
-      header("Location: success.php");
-    }
-  }
-  ?>
 <html>
 <style>
 form {
@@ -97,6 +79,23 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="password" required>
     <br/>
     <button type="submit">Login</button>
+    <?php
+      session_start();
+      $username = "john"
+      $password = "password"vi
+
+      if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        header("Location: success.php");
+      }
+
+      if (isset($_POST['username']) && isset($_POST['password'])) {
+        if ($_POST['username'] == $username && $_POST['password'] == $password)
+        {
+          $_SESSION['loggedin'] = true;
+          header("Location: success.php");
+        }
+      }
+    ?>
     <input type="checkbox" checked="checked"> Remember me
   </div>
 
@@ -105,6 +104,5 @@ span.psw {
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
-
 </body>
 </html>
