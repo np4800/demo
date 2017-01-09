@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
+    header("Location: index.php");
+  }
+?>
 <html>
 	<head>
 		<meta charset=utf-8 />
@@ -14,14 +20,6 @@
 		</style>
 	</head>
 	<body>
-		<h1>
-      <?php
-        session_start();
-        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
-          header("Location: index.php");
-        }
-     ?>
-      Hello John
-    </h1>
+		<h1>Hello John</h1>
 	</body>
 </html>
