@@ -5,14 +5,14 @@
   $username = "john"
   $password = "password"
 
-  if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     header("Location: success.php");
   }
 
   if (isset($_POST['username']) && isset($_POST['password'])) {
     if ($_POST['username'] == $username && $_POST['password'] == $password)
     {
-      $_SESSION['logged_in'] = true;
+      $_SESSION['loggedin'] = true;
       header("Location: success.php");
     }
   }
@@ -84,17 +84,17 @@ span.psw {
 
 <h2>Login Form</h2>
 
-<form action="action_page.php">
+<form method="post" action="index.php">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
     <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username" name="wusername" required>
     <br/>
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" required>
     <br/>
     <button type="submit">Login</button>
     <input type="checkbox" checked="checked"> Remember me

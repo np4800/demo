@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <?php
    session_start();
-   if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false) {
+   if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
      header("Location: index.php");
    }
 
@@ -20,6 +20,6 @@
 		</style>
 	</head>
 	<body>
-		<h1> Hello $username</h1>
+		<h1> Hello John</h1>
 	</body>
 </html>
